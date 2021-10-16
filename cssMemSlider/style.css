@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -37,9 +39,10 @@
   border-radius: 1%;
 }
 
-.under-meme-text {
-  opacity: 0.5;
-  
+.text {
+    font-family: 'Comic Neue', cursive;
+  display: none;
+  font-size: 1.2rem;
 }
 
 .slide-first {
@@ -69,18 +72,16 @@
 #slide-second:checked ~ .under-meme-text > .text-second,
 #slide-third:checked ~ .under-meme-text > .text-third,
 #slide-fourth:checked ~ .under-meme-text > .text-fourth {
-    opacity: 1;
- background-color: aqua;
-} 
+  display: unset;
+}
 
 input {
   display: none;
 }
 
 .bullets {
-   width: 5%;
+  width: 5%;
 }
-
 
 .slider-bullet {
   z-index: 3;
@@ -90,7 +91,7 @@ input {
   border-color: aqua;
   position: relative;
   width: 20%;
-    height: 30%;
+  height: 30%;
   border-radius: 50%;
   transition: background ease-in-out .5s;
 }
@@ -100,6 +101,37 @@ label:hover,
 #slide-second:checked ~ .bullets label:nth-of-type(2),
 #slide-third:checked ~ .bullets label:nth-of-type(3),
 #slide-fourth:checked ~ .bullets label:nth-of-type(4) {
-  background:aqua;
+  background: aqua;
 }
 
+@media screen and (max-width: 768px) {
+  .slider-wrapper {
+    flex-direction: column;
+    justify-content: left;
+    gap: 3%;
+  }
+
+  .slider {
+    height: 35%;
+    order: 1;
+  }
+
+  .bullets {
+    order: 2;
+    align-self: center;
+    width: 15%;
+    height: 2%;
+  }
+
+  .slider-bullet {
+    height: 100%;
+  }
+
+  .under-meme-text {
+    order: 3;
+  }
+
+  .text {
+    font-size: 2rem;
+  }
+}
