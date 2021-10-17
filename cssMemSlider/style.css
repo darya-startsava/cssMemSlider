@@ -37,12 +37,39 @@
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 1%;
+  animation-duration: 1s;
+  animation-name: slideAnimation;
+}
+
+@keyframes slideAnimation {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 .text {
   font-family: 'Comic Neue', cursive;
   display: none;
   font-size: 1.2rem;
+  width: 20vw;
+  animation-duration: 1s;
+  animation-name: textAnimation;
+}
+
+@keyframes textAnimation {
+  from {
+    margin-left: 200%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
 }
 
 .slide-first {
@@ -112,6 +139,16 @@ label:hover {
   border: 0.2rem solid #fcff4b !important;
 }
 
+label::before {
+  content: "";
+  display: block;
+  margin: -1rem;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
 @media screen and (max-width: 768px) {
   .slider-wrapper {
     flex-direction: column;
@@ -127,7 +164,7 @@ label:hover {
   .bullets {
     order: 2;
     align-self: center;
-    width: 15%;
+    width: 25%;
     height: 2%;
     padding-left: 0;
   }
@@ -138,6 +175,7 @@ label:hover {
 
   .text {
     font-size: 2rem;
+    width: 60vw;
   }
 }
 
