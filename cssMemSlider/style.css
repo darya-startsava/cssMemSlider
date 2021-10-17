@@ -8,7 +8,7 @@
   width: 100vw;
   height: 100vh;
   padding-top: 3%;
-  background-color: rgb(198, 216, 216);
+  background-color: #7cafc4;
 }
 
 .slider-wrapper {
@@ -40,7 +40,7 @@
 }
 
 .text {
-    font-family: 'Comic Neue', cursive;
+  font-family: 'Comic Neue', cursive;
   display: none;
   font-size: 1.2rem;
 }
@@ -72,7 +72,7 @@
 #slide-second:checked ~ .under-meme-text > .text-second,
 #slide-third:checked ~ .under-meme-text > .text-third,
 #slide-fourth:checked ~ .under-meme-text > .text-fourth {
-  display: unset;
+  display: block;
 }
 
 input {
@@ -80,28 +80,36 @@ input {
 }
 
 .bullets {
-  width: 5%;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  padding-left: 35%;
 }
 
 .slider-bullet {
   z-index: 3;
   cursor: pointer;
   display: inline-block;
-  background: #000;
-  border-color: aqua;
+  background: #5995ed;
+  border: 0.1rem solid #5995ed;
   position: relative;
-  width: 20%;
-  height: 30%;
+  width: 1.2rem;
+  height: 1.2rem;
   border-radius: 50%;
-  transition: background ease-in-out .5s;
 }
 
-label:hover,
+label:active,
 #slide-first:checked ~ .bullets label:nth-of-type(1),
 #slide-second:checked ~ .bullets label:nth-of-type(2),
 #slide-third:checked ~ .bullets label:nth-of-type(3),
 #slide-fourth:checked ~ .bullets label:nth-of-type(4) {
-  background: aqua;
+  border: 0.2rem solid #5995ed;
+  background: #7cafc4;
+}
+
+label:hover {
+  background: #fcff4b;
+  border: 0.2rem solid #fcff4b !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -121,10 +129,7 @@ label:hover,
     align-self: center;
     width: 15%;
     height: 2%;
-  }
-
-  .slider-bullet {
-    height: 100%;
+    padding-left: 0;
   }
 
   .under-meme-text {
@@ -135,3 +140,4 @@ label:hover,
     font-size: 2rem;
   }
 }
+
